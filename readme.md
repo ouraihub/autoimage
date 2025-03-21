@@ -1,3 +1,4 @@
+好的，我将帮您使用conda创建Python 3.10的虚拟环境。以下是具体步骤：
 
 1. 创建conda环境：
 
@@ -62,5 +63,40 @@ dependencies:
 ```bash
 conda env create -f environment.yml
 ```
+
+## 配置说明
+
+本项目需要配置 Cloudflare 凭证才能运行。请按照以下步骤进行配置：
+
+1. 复制示例配置文件：
+   ```bash
+   cp .env.example .env
+   # 或者
+   cp .streamlit/secrets.example.toml .streamlit/secrets.toml
+   ```
+
+2. 编辑配置文件，填入你的 Cloudflare 凭证：
+   - CLOUDFLARE_ACCOUNT_ID：你的 Cloudflare 账户 ID
+   - CLOUDFLARE_API_TOKEN：你的 Cloudflare API 令牌
+
+3. 确保配置文件已被 .gitignore 忽略，不会被提交到代码库
+
+## 部署说明
+
+### 本地开发
+1. 复制配置示例文件：
+   ```bash
+   cp .streamlit/secrets.example.toml .streamlit/secrets.toml
+   ```
+2. 编辑 `.streamlit/secrets.toml`，填入你的 Cloudflare 凭证
+
+### Streamlit Cloud 部署
+1. 在 [Streamlit Cloud](https://share.streamlit.io) 创建新的应用
+2. 在应用设置中，找到 "Secrets" 部分
+3. 添加以下配置：
+   ```toml
+   CLOUDFLARE_ACCOUNT_ID = "your_account_id"
+   CLOUDFLARE_API_TOKEN = "your_api_token"
+   ```
 
 
