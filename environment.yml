@@ -1,0 +1,12 @@
+name: ai_image
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+    - streamlit==1.31.1
+    - requests==2.31.0
+    - Pillow==10.2.0
+    - python-dotenv==1.0.1 
